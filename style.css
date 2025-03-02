@@ -479,10 +479,35 @@ a:hover {
 }
 
 .about .about-content .about-text p {
-    font-size: 16px;
-    line-height: 25px;
-    color: var(--black-400);
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+    color: #333333;
+    text-align: justify;
+    font-weight: 400;
+    padding: 18px 24px;
+    border-left: 5px solid #007bff;
+    border-right: 5px solid #007bff;
+
+    background: linear-gradient(135deg, #ecf1fa, #e1e8f3b0);
+
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
 }
+
+/* Subtle, sleek hover effect */
+.about .about-content .about-text p:hover {
+    background: #eef1f5;
+    /* Slightly darker off-white for gentle effect */
+    transform: translateY(-3px);
+    /* Smooth lift effect */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    /* Enhanced depth */
+}
+
+
+
 
 .about .about-content .personal-info {
     flex: 0 0 60%;
@@ -611,7 +636,12 @@ a:hover {
     background: rgba(255, 255, 255, 0.05);
     /* Light background effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding-right: 15px;
+    /* Adds padding on the right after hover */
+    transition: all 0.3s ease;
+    /* Smooth transition effect */
 }
+
 
 .about .about-content .timeline .timeline-item:last-child {
     padding-bottom: 0;
