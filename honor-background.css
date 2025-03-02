@@ -1,0 +1,144 @@
+/* White Background Animation */
+@keyframes fade-bg {
+    0% {
+        background-color: #ffffff;
+    }
+
+    50% {
+        background-color: #f8f8f8;
+    }
+
+    100% {
+        background-color: #ffffff;
+    }
+}
+
+.honor {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    animation: fade-bg 3s ease-in-out infinite alternate;
+}
+
+/* Bubble Container */
+.honor .floating-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* Keeps bubbles behind content */
+    overflow: hidden;
+    pointer-events: none;
+    /* Prevents interaction blocking */
+}
+
+/* Bubble Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-30px) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Hover Animation */
+@keyframes hover-move {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(calc(-50px + 100px * random()), calc(-50px + 100px * random())) scale(1.3) rotate(15deg);
+    }
+
+    100% {
+        transform: translate(calc(-100px + 200px * random()), calc(-100px + 200px * random())) scale(1) rotate(-10deg);
+    }
+}
+
+/* Bubbles */
+.honor .dot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+    animation: float 5s infinite ease-in-out;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    pointer-events: auto;
+    /* Allows interaction */
+}
+
+/* Different bubble colors */
+.honor .dot:nth-child(1) {
+    background: rgba(255, 99, 71, 0.5);
+    top: 20%;
+    left: 10%;
+    animation-duration: 6s;
+}
+
+.honor .dot:nth-child(2) {
+    background: rgba(0, 255, 127, 0.5);
+    top: 50%;
+    left: 30%;
+    animation-duration: 7s;
+}
+
+.honor .dot:nth-child(3) {
+    background: rgba(255, 215, 0, 0.5);
+    top: 80%;
+    left: 70%;
+    animation-duration: 8s;
+}
+
+.honor .dot:nth-child(4) {
+    background: rgba(0, 191, 255, 0.5);
+    top: 40%;
+    left: 90%;
+    animation-duration: 5s;
+}
+
+.honor .dot:nth-child(5) {
+    background: rgba(147, 112, 219, 0.5);
+    top: 10%;
+    left: 50%;
+    animation-duration: 6.5s;
+}
+
+.honor .dot:nth-child(6) {
+    background: rgba(255, 69, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    top: 70%;
+    left: 20%;
+    animation-duration: 7.5s;
+}
+
+.honor .dot:nth-child(7) {
+    background: rgba(255, 140, 0, 0.5);
+    width: 45px;
+    height: 45px;
+    top: 30%;
+    left: 80%;
+    animation-duration: 9s;
+}
+
+/* Hover Effect - Smooth Move and Bounce */
+.honor .dot:hover {
+    animation: hover-move 0.6s ease-in-out;
+    transform: scale(1.4) rotate(25deg);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
