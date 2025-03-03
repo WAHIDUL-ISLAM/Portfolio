@@ -92,7 +92,7 @@ function downloadCV(event) {
 
     // Create a hidden download link
     const link = document.createElement("a");
-    link.href = "./assets/Muhib's CV.pdf"; // Make sure the file path is correct
+    link.href = "Muhib's CV.pdf"; // Make sure the file path is correct
     link.download = "Muhib_CV.pdf"; // Set the downloaded file name
     document.body.appendChild(link);
     link.click();
