@@ -78,5 +78,32 @@ $(document).ready(function () {
     });
 });
 
+function downloadCV(event) {
+    event.preventDefault(); // Prevents page refresh
+
+    const button = document.getElementById("downloadBtn");
+    const btnText = document.getElementById("btnText");
+    const spinner = document.getElementById("loadingSpinner");
+
+    // Change button text and show spinner
+    btnText.textContent = "Downloading...";
+    spinner.style.display = "inline-block";
+    button.style.pointerEvents = "none"; // Disable button to prevent multiple clicks
+
+    // Create a hidden download link
+    const link = document.createElement("a");
+    link.href = "./assets/Muhib's CV.pdf"; // Make sure the file path is correct
+    link.download = "Muhib_CV.pdf"; // Set the downloaded file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Reset button text after 2 seconds
+    setTimeout(() => {
+        btnText.textContent = "Download CV";
+        spinner.style.display = "none";
+        button.style.pointerEvents = "auto"; // Re-enable button
+    }, 2000);
+}
 
 

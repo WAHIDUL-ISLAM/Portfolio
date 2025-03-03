@@ -628,18 +628,15 @@ a:hover {
     padding-left: 37px;
     padding-bottom: 50px;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
 .about .about-content .timeline .timeline-item:hover {
     transform: translateX(10px);
-    /* Moves slightly to the right */
     background: rgba(255, 255, 255, 0.05);
-    /* Light background effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding-right: 15px;
-    /* Adds padding on the right after hover */
     transition: all 0.3s ease;
-    /* Smooth transition effect */
 }
 
 
@@ -704,6 +701,28 @@ a:hover {
     font-size: 16px;
     text-align: justify;
     color: var(--text-black-700);
+}
+
+
+/* For the spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Honor Section - White Background */
